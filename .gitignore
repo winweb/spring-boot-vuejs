@@ -28,6 +28,7 @@ logback.out.xml
 
 backend/src/main/resources/public/
 backend/target
+frontend/coverage/
 frontend/dist/
 frontend/node/
 frontend/node_modules/

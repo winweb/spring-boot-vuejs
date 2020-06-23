@@ -24,8 +24,8 @@ export default {
   data () {
     return {
       loginError: false,
-      user: '',
-      password: '',
+      user: 'foo',
+      password: '{noop}bar',
       error: false,
       errors: []
     }

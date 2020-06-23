@@ -1,5 +1,8 @@
 // vue.config.js
 module.exports = {
+
+  publicPath: process.env.NODE_ENV === 'production' ? '/app/' : '/app/',
+
   // proxy all webpack dev-server requests starting with /api
   // to our Spring Boot backend (localhost:8088) using http-proxy-middleware
   // see https://cli.vuejs.org/config/#devserver-proxy

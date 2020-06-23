@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController()
 @RequestMapping("/api")
 public class BackendController {
@@ -24,6 +26,7 @@ public class BackendController {
     @RequestMapping(path = "/hello")
     public String sayHello() {
         LOG.info("GET called on /hello resource");
+
         return HELLO_TEXT;
     }
 
@@ -44,6 +47,21 @@ public class BackendController {
             LOG.info("Reading user with id " + id + " from database.");
             return user;
         }).orElseThrow(() -> new UserNotFoundException("The user with the id " + id + " couldn't be found in the database."));
+    }
+
+    @GetMapping(path = "/all")
+    public List<User> allUser() {
+        LOG.info("all user");
+
+        List<User> all = (List<User>) userRepository.findAll();
+
+        for (User user : all) {
+            LOG.info("user: {}", user);
+        }
+
+        LOG.info("all size: {}", all.size());
+
+        return all;
     }
 
     @RequestMapping(path="/secured", method = RequestMethod.GET)
