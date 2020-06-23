@@ -1,6 +1,9 @@
 // https://docs.cypress.io/api/introduction/api.html
 
 describe('My First Test', () => {
+
+  Cypress.config('chromeWebSecurity',false);
+
   it('Visits the app root url', () => {
     cy.visit('/')
     cy.get('img').should('have.attr', 'src').should('include','spring-boot-vuejs-logo')
