@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 public class SpaController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BackendController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SpaController.class);
 
     // Forwards all routes to FrontEnd except: '/', '/index.html', '/api', '/api/**'
     // Required because of 'mode: history' usage in frontend routing, see README for further details
